@@ -45,9 +45,20 @@ public class MethodTransactionBuilder {
 
     public static void applyTransactionAttributes(CoreDeploymentInfo deploymentInfo, List<MethodTransactionInfo> methodTransactionInfos) throws OpenEJBException {
 
+        if (deploymentInfo.isBeanManagedTransaction()) return;
+
         methodTransactionInfos = normalize(methodTransactionInfos);
 
         Map<Method, MethodAttributeInfo> attributes = resolveAttributes(methodTransactionInfos, deploymentInfo);
+
+        Logger log = Logger.getInstance(LogCategory.OPENEJB_STARTUP.createChild("attributes"), MethodTransactionBuilder.class);
+        if (log.isDebugEnabled()) {
+            for (Map.Entry<Method, MethodAttributeInfo> entry : attributes.entrySet()) {
+                Method method = entry.getKey();
+                MethodPermissionInfo value = (MethodPermissionInfo) entry.getValue();
+                log.debug("Transaction Attribute: " + method + " -- " + MethodInfoUtil.toString(value));
+            }
+        }
 
         for (Map.Entry<Method, MethodAttributeInfo> entry : attributes.entrySet()) {
             MethodTransactionInfo value = (MethodTransactionInfo) entry.getValue();
