@@ -1,5 +1,4 @@
 /**
- *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -15,26 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.openejb.core.cmp;
+package org.apache.openejb.server.auth;
 
-import org.apache.openejb.OpenEJBException;
+import java.net.InetAddress;
 
-import javax.transaction.TransactionManager;
-import javax.transaction.TransactionSynchronizationRegistry;
-
-public interface CmpEngineFactory {
-
-    TransactionManager getTransactionManager();
-
-    void setTransactionManager(TransactionManager transactionManager);
-
-    TransactionSynchronizationRegistry getTransactionSynchronizationRegistry();
-
-    void setTransactionSynchronizationRegistry(TransactionSynchronizationRegistry synchronizationRegistry);
-
-    CmpCallback getCmpCallback();
-
-    void setCmpCallback(CmpCallback cmpCallback);
-
-    CmpEngine create() throws OpenEJBException;
+/**
+ * @version $Rev$ $Date$
+ */
+public class PermitAllPermission implements IPAddressPermission {
+    public boolean implies(InetAddress address) {
+        return true;
+    }
 }

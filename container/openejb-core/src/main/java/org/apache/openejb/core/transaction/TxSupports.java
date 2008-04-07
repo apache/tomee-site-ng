@@ -25,11 +25,11 @@ import org.apache.openejb.SystemException;
  * The Container invokes an enterprise Bean method whose transaction attribute
  * is set to Supports as follows.
  *
- * ¥ If the client calls with a transaction context, the Container performs
- *   the same steps as described in the Required case.
- *
- * ¥ If the client calls without a transaction context, the Container performs
- *   the same steps as described in the NotSupported case.
+ * If the client calls with a transaction context, the Container performs
+ * the same steps as described in the Required case.
+ * 
+ * If the client calls without a transaction context, the Container performs
+ * the same steps as described in the NotSupported case.
  *
  * The Supports transaction attribute must be used with caution. This is
  * because of the different transactional semantics provided by the two
@@ -45,6 +45,7 @@ public class TxSupports extends TransactionPolicy {
     }
 
     public void beforeInvoke(Object instance, TransactionContext context) throws SystemException, ApplicationException {
+        context.callContext.set(Type.class, getPolicyType());
 
         try {
 
