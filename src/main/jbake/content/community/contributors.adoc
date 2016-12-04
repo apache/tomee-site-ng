@@ -1,0 +1,13 @@
+= Wall of fame
+:jbake-date: 2016-03-16
+:jbake-type: contributors
+:jbake-status: published
+
+----
+agumbrecht@tomitribe.com*
+jeanouii@gmail.com*
+rmannibucau@gmail.com*
+struberg@yahoo.de*
+jgallimore@apache.org*
+tveronezi@apache.org*
+----
