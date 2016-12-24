@@ -182,6 +182,40 @@ Sample:
 
 IMPORTANT: if a server is already started on host:port then it will be used instead of starting the configured TomEE type.
 
+To use a custom instance with arquillian ensure to have ejbd and tomee webapp activated. A way is to have in `conf/system.properties` these entries:
+
+[source]
+----
+tomee.remote.support=true
+openejb.system.apps=true
+
+# you can customize it depending the security level you need on the instance
+tomee.serialization.class.whitelist =
+tomee.serialization.class.blacklist = org.codehaus.groovy.runtime.,org.apache.commons.collections.functors.,org.apache.xalan,java.lang.Process
+----
+
+For really remote instances (= not on localhost) you need the `deployerProperties` of previous snippet too:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="
+  http://jboss.org/schema/arquillian
+  http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+ <container qualifier="tomee" default="true">
+  <configuration>
+   <!-- ... -->
+   <property name="deployerProperties">
+    openejb.deployer.binaries.use=true
+    openejb.deployer.save-deployments=false
+   </property>
+  </configuration>
+ </container>
+</arquillian>
+----
+
 ==== Coordinates
 
 [source,xml]
