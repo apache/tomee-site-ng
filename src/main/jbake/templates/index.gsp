@@ -10,7 +10,7 @@
                             Apache TomEE
                         </div>
                         <div class="col-md-12 text-center">
-                            <h1 class="white typed">Embedded or distributed as you prefer.</h1>
+                            <h2 class="white typed">The Embedded or Remote EE Application Server</h2>
                             <span class="typed-cursor">|</span>
                         </div>
                     </div>
