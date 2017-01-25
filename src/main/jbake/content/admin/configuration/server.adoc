@@ -68,7 +68,7 @@
 |openejb.session.manager	|qualified name (string)|	configure a session managaer to use for all contexts
 |tomee.tomcat.resource.wrap	|bool|wrap tomcat resources (context.xml) as tomee resources if possible (true by default)
 |tomee.tomcat.datasource.wrap	|bool|same as tomee.tomcat.resource.wrap for datasource (false by default). Note that setting it to true will create tomee datasources but can have the side effect to create twice singleton resources
-|openejb.environment.defaul	|bool|should default JMS resources be created or not, default to false to ensure no port is bound or multiple resources are created and completely uncontrolled (doesn't apply to datasources etc for compatibility). For tests only!
+|openejb.environment.default	|bool|should default JMS resources be created or not, default to false to ensure no port is bound or multiple resources are created and completely uncontrolled (doesn't apply to datasources etc for compatibility). For tests only!
 |===
 
 === Client
