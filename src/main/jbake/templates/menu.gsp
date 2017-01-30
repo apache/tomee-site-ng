@@ -33,7 +33,7 @@
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples/index.html">Examples</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>blog/index.html">Blog</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>community/index.html">Community</a></li>
-                    <li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download.html">Downloads</a></li>
+                    <li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
