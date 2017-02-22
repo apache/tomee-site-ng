@@ -8,3 +8,4 @@
 - link:setup/index.html[How to install TomEE properly]
 - link:shading/index.html[Simple deployable: fat/uber jars]
 - link:client/index.html[Clients (JNDI)]
+- link:jms/jms-configuration.html[JMS Configuration Tips]
