@@ -1,5 +1,34 @@
 = TomEE Website Proposal
 
+== Add content
+
+Documentation is in `src/main/jbake/content`, it follows the sitemap/structure. If you add a new page ensure to add a link to it please.
+
+Preferred format is `asciidoc`.
+
+Here a sample for a new page:
+
+[source,adoc]
+----
+= My New Page
+:jbake-date: 2017-03-16
+:jbake-type: page
+:jbake-status: published
+:jbake-tomeepdf:
+
+This page will rocks.
+
+- One point
+- Another point
+
+=== Subtitle
+
+Some content.
+----
+
+TIP: to run the website check the build section or run the main `org.apache.tomee.website.JBake`, it will log the local address to access the dev website and
+enable you to type `r[ENTER]` to rebuild it without restarting.
+
 == Build
 
 To build the final website just use:
