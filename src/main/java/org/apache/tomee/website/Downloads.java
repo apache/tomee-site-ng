@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
@@ -62,7 +63,7 @@ public class Downloads {
                 .flatMap(Downloads::toDownloadable)
                 .parallel()
                 .map(Downloads::fillDownloadable)
-                .filter(d -> d != null /* skipped */)
+                .filter(Objects::nonNull /* skipped */)
                 .sorted((o1, o2) -> {
                     final int nameComp = o1.name.compareTo(o2.name);
                     if (nameComp != 0) {
