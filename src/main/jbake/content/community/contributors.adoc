@@ -4,10 +4,32 @@
 :jbake-status: published
 
 ----
+adc@apache.org*
+ammulder@apache.org*
 agumbrecht@tomitribe.com*
+dain@apache.org*
+dblevins@apache.org*
+djencks@apache.org*
+dsh@apache.org*
+gawor@apache.org*
+gdamour@apache.org*
+genspring@apache.org*
+hogstrom@apache.org*
+jgallimore@apache.org*
+jgenender@apache.org*
+jlaskowski@apache.org*
 jeanouii@gmail.com*
+jvanzyl@apache.org*
+jwhitlock@apache.org*
+kevan@apache.org*
+kmalhi@apache.org*
+lajos@apache.org*
+manugeorge@apache.org*
+mnour@apache.org*
+rickmcguire@apache.org*
 rmannibucau@gmail.com*
 struberg@yahoo.de*
-jgallimore@apache.org*
 tveronezi@apache.org*
+vishwanathk@apache.org*
+xuhaihong@apache.org*
 ----
