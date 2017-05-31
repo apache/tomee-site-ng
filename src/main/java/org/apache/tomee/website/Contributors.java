@@ -52,8 +52,32 @@ public class Contributors {
     }
 
     public static Contributor singleLoad(final WebTarget target, final String input) throws IOException {
-        final boolean committer = input.endsWith("*");
-        final String mail = committer ? input.substring(0, input.length() - 1) : input;
+        try {
+            return ofNullable(loadGravatar(target, input)).orElse(loadStatic(input));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return loadStatic(input);
+        }
+    }
+
+    public static Contributor loadStatic(final String input) {
+        final String[] strings = input.split(" *\\| *");
+        final String mail = strings[0].replaceAll("\\*$", "");
+        final boolean committer = strings[0].endsWith("*");
+        final String name = strings.length > 1 ? strings[1] : mail.replaceAll("@.*", "");
+        final String picture = strings.length > 2 ? strings[2] : "../img/noimg.png";
+        return Contributor.builder()
+                .name(name)
+                .id(mail)
+                .committer(committer)
+                .gravatar(picture)
+                .build();
+    }
+
+    public static Contributor loadGravatar(final WebTarget target, final String input) throws IOException {
+        final String[] strings = input.split(" *\\| *");
+        final boolean committer = strings[0].endsWith("*");
+        final String mail = committer ? strings[0].substring(0, strings[0].length() - 1) : strings[0];
         final String hash = gravatarHash(mail);
         final Response gravatar = target.path(hash + ".json").request(MediaType.APPLICATION_JSON_TYPE).get();
         if (gravatar.getStatus() != HttpsURLConnection.HTTP_OK) {
@@ -78,7 +102,7 @@ public class Contributors {
                                                 .map(a -> Stream.of(a).map(l -> Link.builder().name(l.getTitle()).url(l.getValue()).build()).collect(toList()))
                                                 .orElse(emptyList()).stream())
                                         .collect(toList()))
-                        .gravatar("http://www.gravatar.com/avatar/" + hash)
+                        .gravatar("http://www.gravatar.com/avatar/" + hash + "?s=140")
                         .build())
                 .orElse(Contributor.builder().name(mail).id(mail).build());
         contributor.setCommitter(committer);

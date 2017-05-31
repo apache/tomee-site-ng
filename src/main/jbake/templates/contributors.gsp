@@ -23,12 +23,12 @@
                 %>
                   <div class="col-sm-4">
                     <div class="photo col-sm-5">
-                      <img alt="${contributor.name}" src="${contributor.gravatar}?s=140">
+                      <img alt="${contributor.name}" src="${contributor.gravatar}" style="width:140px">
                       <% if (contributor.committer){ %><i class="pull-right fa fa-star-o" style="color:#F38F24;"></i><% } %>
                     </div>
                     <div class="col-sm-7">
                       <h3 class="contributor-name" style="font-size:1.4em;">${contributor.name}</h3>
-                      <p>${contributor.description ? contributor.description : ''}</p>
+                      <p></p>
                       <ul class="list-inline">
                       <%contributor.link.each {l ->%>
                       <li><a href="${l.url}">${l.name}</a></li>
