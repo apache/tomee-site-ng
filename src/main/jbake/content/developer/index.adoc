@@ -10,3 +10,4 @@
 - link:tools/index.html[TomEE and Tools]
 - link:json/index.html[TomEE and JSON]
 - link:configuration/cxf.html[TomEE CXF Configuration]
+- link:migration/tomee-1-to-7.html[Migrating from TomEE 1 to 7]
