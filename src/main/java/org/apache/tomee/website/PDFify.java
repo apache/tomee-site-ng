@@ -55,7 +55,8 @@ public class PDFify {
                         if (attributes.containsKey("jbake-tomeepdf") && !attributes.containsKey("jbake-tomeepdf-manual")) {
                             asciidoctor.convertFile(
                                     asFile,
-                                    options().docType("manpage").backend
+                                    options().docType("article")
+                                            .backend
                                             ("pdf")
                                     .attributes(AttributesBuilder.attributes().attribute("source-highlighter", "coderay")).toFile(target).get());
                             System.out.println("Generated " + target);
