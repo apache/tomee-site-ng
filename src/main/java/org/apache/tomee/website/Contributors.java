@@ -31,7 +31,10 @@ import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -51,8 +54,8 @@ public class Contributors {
     public static Contributor singleLoad(final WebTarget target, final String input) throws IOException {
         try {
             return ofNullable(loadGravatar(target, input)).orElse(loadStatic(input));
-        } catch (Throwable e) {
-            System.out.println("Failed to get Contributor for " + input + " : " + e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
             return loadStatic(input);
         }
     }
@@ -80,8 +83,6 @@ public class Contributors {
         if (gravatar.getStatus() != HttpsURLConnection.HTTP_OK) {
             System.err.println("[ERROR] No gravatar for " + mail);
             return null;
-        }else {
-            System.out.println("Found gravatar for " + mail);
         }
         final Contributor contributor = ofNullable(gravatar.readEntity(Gravatar.class).getEntry())
                 .map(e -> e[0])
@@ -105,7 +106,7 @@ public class Contributors {
                         .build())
                 .orElse(Contributor.builder().name(mail).id(mail).build());
         contributor.setCommitter(committer);
-        ofNullable(contributor.getLink()).ifPresent(l -> l.sort(Comparator.comparing(Link::getName)));
+        ofNullable(contributor.getLink()).ifPresent(l -> Collections.sort(l, (o1, o2) -> o1.getName().compareTo(o2.getName())));
         return contributor;
     }
 
