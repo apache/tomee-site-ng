@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Apache TomEE</title>
+	<meta name="description" content="Apache TomEE is a light JavaEE server with a lot tooling" />
+	<meta name="keywords" content="tomee,asf,apache,javaee,jee,shade,embedded,test,junit,applicationcomposer,maven,arquillian" />
+	<meta name="author" content="Luka Cvetinovic for Codrops" />
+	<link rel="icon" href="../../favicon.ico">
+	<link rel="icon"  type="image/png" href="../../favicon.png">
+	<meta name="msapplication-TileColor" content="#80287a">
+	<meta name="theme-color" content="#80287a">
+	<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../css/owl.css">
+	<link rel="stylesheet" type="text/css" href="../../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../fonts/eleganticons/et-icons.css">
+	<link rel="stylesheet" type="text/css" href="../../css/jqtree.css">
+	<link rel="stylesheet" type="text/css" href="../../css/idea.css">
+	<link rel="stylesheet" type="text/css" href="../../css/cardio.css">
+
+	<script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2717626-1']);
+      _gaq.push(['_setDomainName', 'apache.org']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</head>
+
+<body>
+    <div class="preloader">
+		<img src="../../img/loader.gif" alt="Preloader image">
+	</div>
+	
+	    <nav class="navbar">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../../">
+				    <span>
+
+				    
+                        <img src="../../img/logo-active.png">
+                    
+
+                    </span>
+				    Apache TomEE
+                </a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right main-nav">
+					<li><a href="../../documentation/index.html">Documentation</a></li>
+					<li><a href="../../examples/index.html">Examples</a></li>
+					<li><a href="../../community/index.html">Community</a></li>
+					<li><a href="../../security/index.html">Security</a></li>
+					<li><a href="../../downloads/download-ng.html">Downloads</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<div id="main-block" class="container section-padded">
+        <div class="row title">
+            <div class='page-header'>
+              
+              <div class='btn-toolbar pull-right'>
+                <div class='btn-group'>
+                    <a class="btn" href="../../blog/2017/tomee-7.0.3-released.pdf"><i class="fa fa-file-pdf-o"></i> Download as PDF</a>
+                </div>
+              </div>
+              
+              <h2>TomEE 7.0.3 Released</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p><em>2017-03-13</em></p>
+
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Aapche TomEE 7.0.3 just got released. It is available as usual on central
+or our download page.</p>
+</div>
+<div class="paragraph">
+<p>Most significant changes are linked to the dependency upgrades but several bugfixes can be interesting as well.</p>
+</div>
+<div class="paragraph">
+<p>The release note is the following one:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bug">Bug</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1874">TOMEE-1874</a> -         Do not inject CDI if the application is being undeployed</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1897">TOMEE-1897</a> -         CdiResourceProvider masks critical error in InjectionException</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1965">TOMEE-1965</a> -         EntityManager(Factory) (and EntityManagerFactoryCallable) not serializable</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1967">TOMEE-1967</a> -         ObserverManager uses printStackTrace instead of logger.error</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1969">TOMEE-1969</a> -         Embedded maven plugin fails with java.lang.NoClassDefFoundError: org/apache/commons/beanutils/BeanUtils</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1970">TOMEE-1970</a> -         Configuration error can cause infinite loop</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1972">TOMEE-1972</a> -         dont initialize SystemInstance reading openejb.io.util.timeout</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1975">TOMEE-1975</a> -         authorization should be removed from the url for openejb-client</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1982">TOMEE-1982</a> -         @RunAs should only apply to nested calls, not the declaring bean ones</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1983">TOMEE-1983</a> -         NullPointerException is thrown from a consumer created by JMSContext when queue is empty</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1992">TOMEE-1992</a> -         JMSContext is not serializable, causing problems for Session and Transaction Scoped CDI beans</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1993">TOMEE-1993</a> -         When using symbolic links the @WebServlet is not processed</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1998">TOMEE-1998</a> -         moviefun-rest example not working with Tomee 7</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2007">TOMEE-2007</a> -         CUTask (ManagedExecutorService) can lead to NPE used from an EJB</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2009">TOMEE-2009</a> -         openejb.jpa.auto-scan should also add @Converter classes</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2012">TOMEE-2012</a> -         JPA 2.1 providers not always recognized</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2016">TOMEE-2016</a> -         7.0.2 (plus) Batch fails before batch starting</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2018">TOMEE-2018</a> -         connectionFactoryLookup and destinationLookup not supported for mdbs</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dependency_upgrade">Dependency upgrade</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1966">TOMEE-1966</a> -         tomcat 8.5.11</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1986">TOMEE-1986</a> -         johnzon 1.0.0</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1987">TOMEE-1987</a> -         geronimo transaction/connector 3.1.4</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1990">TOMEE-1990</a> -         JCS 2.0</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1994">TOMEE-1994</a> -         Outdated serp version: Entites with Java 8 features not mapped</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1996">TOMEE-1996</a> -         OpenJPA 2.4.2</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1997">TOMEE-1997</a> -         OpenWebBeans 1.7.2</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2010">TOMEE-2010</a> -         cxf 3.1.10</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2011">TOMEE-2011</a> -         activemq 5.14.3</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2015">TOMEE-2015</a> -         jcs 2.1</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_improvement">Improvement</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1976">TOMEE-1976</a> -         http ejbd client doesnt throw AuthorizationException for 401 errors</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1981">TOMEE-1981</a> -         Allow to disable TomEEJohnzonProvider</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2008">TOMEE-2008</a> -         when a lot of @PersistenceContext are in the app, org.apache.openejb.assembler.classic.EntityManagerFactoryCallable#getProvider makes startup slower</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_new_feature">New Feature</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1980">TOMEE-1980</a> -         basic.username and basic.password support for http ejbd client</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-1991">TOMEE-1991</a> -         add to org.apache.tomee.jul.handler.rotating.LocalFileHandler.PatternFormatter class and method as 7th and 8th parameters</p>
+</li>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2005">TOMEE-2005</a> -         support to override arquillian protocol default value of adapters</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_task">Task</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href=":https://issues.apache.org/jira/browse/TOMEE-2002">TOMEE-2002</a> -         use ClassUnwrapper from cxf to slowly replace ClassHelper</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 text-center-mobile">
+					<h3 class="white">Apache TomEE the little great server.</h3>
+					<h5 class="light regular light-white">"A good application in a good server"</h5>
+					<ul class="social-footer">
+						<li><a href="https://fr-fr.facebook.com/ApacheTomEE/"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/apachetomee"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://plus.google.com/communities/105208241852045684449"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 text-center-mobile">
+					<div class="row opening-hours">
+						<div class="col-sm-3 text-center-mobile">
+							<h5><a href="../../documentation/index.html" class="white">Documentation</a></h5>
+							<ul class="list-unstyled">
+								<li><a href="../../documentation/admin/configuration/index.html" class="regular light-white">How to configure</a></li>
+								<li><a href="../../documentation/admin/directory-structure.html" class="regular light-white">Dir. Structure</a></li>
+								<li><a href="../../documentation/developer/testing/index.html" class="regular light-white">Testing</a></li>
+								<li><a href="../../documentation/admin/cluster/index.html" class="regular light-white">Clustering</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-3 text-center-mobile">
+							<h5><a href="../../examples.html" class="white">Examples</a></h5>
+							<ul class="list-unstyled">
+								<li><a href="../../examples/simple-cdi-interceptor.html" class="regular light-white">CDI Interceptor</a></li>
+								<li><a href="../../examples/rest-cdi.html" class="regular light-white">REST with CDI</a></li>
+								<li><a href="../../examples/ejb-examples.html" class="regular light-white">EJB</a></li>
+								<li><a href="../../examples/jsf-managedBean-and-ejb.html" class="regular light-white">JSF</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-3 text-center-mobile">
+							<h5><a href="../../community/index.html" class="white">Community</a></h5>
+							<ul class="list-unstyled">
+								<li><a href="../../community/contributors.html" class="regular light-white">Contributors</a></li>
+								<li><a href="../../community/social.html" class="regular light-white">Social</a></li>
+								<li><a href="../../community/sources.html" class="regular light-white">Sources</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-3 text-center-mobile">
+							<h5><a href="../../security/index.html" class="white">Security</a></h5>
+							<ul class="list-unstyled">
+								<li><a href="http://apache.org/security" target="_blank" class="regular light-white">Apache Security</a></li>
+								<li><a href="http://apache.org/security/projects.html" target="_blank" class="regular light-white">Security Projects</a></li>
+								<li><a href="http://cve.mitre.org" target="_blank" class="regular light-white">CVE</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row bottom-footer text-center-mobile">
+				<div class="col-sm-12 light-white">
+					<p>Copyright &copy; 1999-2016 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Apache TomEE, TomEE, Apache, the Apache feather logo, and the Apache TomEE project logo are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Holder for mobile navigation -->
+	<div class="mobile-nav">
+        <ul>
+          <li><a hef="../../admin/index.html">Administrators</a>
+          <li><a hef="../../developer/index.html">Developers</a>
+          <li><a hef="../../advanced/index.html">Advanced</a>
+          <li><a hef="../../community/index.html">Community</a>
+        </ul>
+		<a href="#" class="close-link"><i class="arrow_up"></i></a>
+	</div>
+	<!-- Scripts -->
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/owl.carousel.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/wow.min.js"></script>
+	<script src="../../js/typewriter.js"></script>
+	<script src="../../js/jquery.onepagenav.js"></script>
+	<script src="../../js/tree.jquery.js"></script>
+	<script src="../../js/highlight.pack.js"></script>
+    <script src="../../js/main.js"></script>
+		</body>
+
+</html>
+
