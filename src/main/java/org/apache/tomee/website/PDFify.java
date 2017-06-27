@@ -55,7 +55,9 @@ public class PDFify {
                         if (attributes.containsKey("jbake-tomeepdf") && !attributes.containsKey("jbake-tomeepdf-manual")) {
                             asciidoctor.convertFile(
                                     asFile,
-                                    options().backend("pdf").attributes(AttributesBuilder.attributes().attribute("source-highlighter", "coderay")).toFile(target).get());
+                                    options().docType("manpage").backend
+                                            ("pdf")
+                                    .attributes(AttributesBuilder.attributes().attribute("source-highlighter", "coderay")).toFile(target).get());
                             System.out.println("Generated " + target);
                         }
                     });
