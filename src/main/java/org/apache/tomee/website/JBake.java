@@ -29,6 +29,28 @@ import static lombok.AccessLevel.PRIVATE;
 @RequiredArgsConstructor(access = PRIVATE)
 public class JBake {
     public static void main(final String[] args) throws Exception {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("WARNING: site moved to https://git-wip-us.apache.org/repos/asf/tomee-tomee-site-generator.git");
+        System.out.println();
+        System.out.println("Think to use that repository, this one will be soon dropped off");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
         System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "64"); // try to have parallelStream better than default
 
         final File source = args == null || args.length < 1 ? new File("src/main/jbake") : new File(args[0]);
