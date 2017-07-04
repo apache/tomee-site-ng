@@ -37,7 +37,7 @@ public class JBake {
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.println("WARNING: site moved to https://git-wip-us.apache.org/repos/asf/tomee-tomee-site-generator.git");
+        System.out.println("WARNING: site moved to https://git-wip-us.apache.org/repos/asf/tomee-site-generator.git");
         System.out.println();
         System.out.println("Think to use that repository, this one will be soon dropped off");
         System.out.println();
